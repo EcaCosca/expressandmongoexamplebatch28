@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
 const Post = require('./models/posts')
+const port = process.env.PORT || 3000
 
 const mongoDB = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox.apxur.mongodb.net/posts?retryWrites=true&w=majority';
 mongoose.connect(mongoDB);
@@ -43,5 +44,5 @@ app.delete("/:id", (req, res) =>
 
 
 
-app.listen('3000', () => console.log('connected'));
+app.listen(port, () => console.log('connected'));
 
